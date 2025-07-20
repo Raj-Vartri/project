@@ -1,0 +1,174 @@
+:root {
+  --primary: #7f5af0;
+  --accent: #2cb67d;
+  --background: #f8fafd;
+  --glass: rgba(255, 255, 255, 0.8);
+  --shadow: 0 8px 32px rgba(36, 45, 73, 0.18);
+  --border-radius: 16px;
+  --text-dark: #22223b;
+  --text-light: #72757e;
+}
+body {
+  background: linear-gradient(120deg, #c3c8fa 0%, #9ec8fa 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 24px;
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--glass);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(7px);
+  padding: 30px 26px 24px 26px;
+}
+h2 {
+  text-align: center;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.input-group input {
+  flex: 1;
+  padding: 13px 14px;
+  border: 2px solid #ededed;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+.input-group input.shake {
+  animation: shake 0.25s linear;
+  border-color: #ec3e2e;
+}
+@keyframes shake {
+  0% { margin-left: 0;}
+  20% { margin-left: -6px;}
+  40% { margin-left: 6px;}
+  60% { margin-left: -6px;}
+  80% { margin-left: 6px;}
+  100% { margin-left: 0;}
+}
+.input-group button {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: var(--border-radius);
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 7px rgba(127,90,240,0.07);
+}
+.input-group button:hover {
+  background: #6241d5;
+}
+
+.warning {
+  color: #ec3e2e;
+  font-size: 14px;
+  margin: 3px 0 0 4px;
+  min-height: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f6fd;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  transition: background 0.25s, box-shadow 0.18s;
+  box-shadow: 0 1px 3px rgba(127,90,240,0.04);
+  word-break: break-word;
+}
+ul li.completed {
+  background: #edeeff;
+  color: var(--text-light);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.task-text, .task-edit {
+  flex: 1;
+  cursor: pointer;
+  transition: color 0.18s;
+  font-size: 16px;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 2px 0;
+  outline: none;
+}
+.task-edit {
+  border-bottom: 1px solid var(--primary);
+  background: #f0efff;
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+.actions {
+  display: flex;
+  gap: 9px;
+  margin-left: 16px;
+}
+.actions button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.18em;
+  border-radius: 8px;
+  padding: 4px 7px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.18s;
+}
+.actions button:hover, .filters button.active {
+  background: var(--primary);
+  color: #fff;
+}
+.actions button:focus {
+  outline: 2px solid var(--accent);
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+.filters button {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  transition: background 0.21s, color 0.18s;
+}
+.filters button.active {
+  background: var(--primary);
+  color: #fff;
+}
+@media (max-width: 520px) {
+  .container { max-width: 98vw; padding: 17px 6vw 15px 6vw;}
+  h2 { font-size: 1.4em;}
+  .actions button { font-size: 1em;}
+}
